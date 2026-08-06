@@ -137,66 +137,47 @@ The system strictly follows the **MVC (Model-View-Controller)** pattern:
 
 ## 📂 Folder Structure
 
-```text
 HospitalAppointmentSystem/
 │
-├── 📁 assets/                          # Static assets
-│   ├── 📁 css/
-│   │   └── 📄 style.css                # Custom CSS
-│   ├── 📁 js/
-│   │   └── 📄 main.js                  # Custom JavaScript
-│   └── 📁 images/                      # Images
-│
-├── 📁 config/                          # Configuration
-│   └── 📄 database.php                 # Database connection
-│
-├── 📁 controllers/                     # Business logic (MVC - Controller)
-│   ├── 📄 authController.php           # Login/Register logic
-│   ├── 📄 logoutController.php         # Logout logic
-│   ├── 📄 patientControllerS.php       # Patient logic 
-│   ├── 📄 doctorControllerM.php        # Doctor logic 
-│   └── 📄 adminControllerZ.php         # Admin logic 
-│
-├── 📁 models/                          # Database queries (MVC - Model)
-│   ├── 📄 patientModelS.php            # Patient queries 
-│   ├── 📄 doctorModelM.php             # Doctor queries 
-│   └── 📄 adminModelZ.php              # Admin queries 
-│
-├── 📁 views/                           # User interface (MVC - View)
-│   ├── 📁 patient/                     # Patient pages (S suffix)
-│   │   ├── 📄 patientDashboardS.php
-│   │   ├── 📄 browseDoctorsS.php
-│   │   ├── 📄 myAppointmentsS.php
-│   │   └── 📄 profileS.php
-│   │
-│   ├── 📁 doctor/                      # Doctor pages (M suffix)
-│   │   ├── 📄 doctorDashboardM.php
-│   │   ├── 📄 myAppointmentsM.php
-│   │   └── 📄 profileM.php
-│   │
-│   ├── 📁 admin/                       # Admin pages (Z suffix)
-│   │   ├── 📄 adminDashboardZ.php
-│   │   ├── 📄 manageDoctorsZ.php
-│   │   ├── 📄 manageSpecializationsZ.php
-│   │   ├── 📄 allAppointmentsZ.php
-│   │   └── 📄 managePatientsZ.php
-│   │
-│   └── 📁 shared/                      # Shared pages
-│       ├── 📄 login.php
-│       └── 📄 register.php
-│
 ├── 📁 ajax/                            # AJAX endpoints
-│   ├── 📄 patientAjaxS.php             
-│   ├── 📄 doctorAjaxM.php              
-│   └── 📄 adminAjaxZ.php              
+│   ├── 📄 adminAjaxZ.php               # Admin AJAX (Mayeesha)
+│   ├── 📄 doctorAjaxM.php              # Doctor AJAX (Zoita)
+│   └── 📄 patientAjaxS.php             # Patient AJAX (Sadman)
 │
-├── 📁 includes/                        # Reusable components
-│   ├── 📄 header.php
+├── 📁 assets/                          # Static assets
+│   ├── 📁 css/                         # Custom stylesheets
+│   └── 📁 js/                          # Custom JavaScript files
+│
+├── 📁 config/                          # Configuration files
+│   └── 📄 database.php                 # MySQL connection setup
+│
+├── 📁 controllers/                     # Controller layer (MVC)
+│   ├── 📄 adminControllerZ.php
+│   ├── 📄 authController.php
+│   ├── 📄 doctorControllerM.php
+│   ├── 📄 logoutController.php
+│   └── 📄 patientControllerS.php
+│
+├── 📁 database/                        # Database scripts
+│   └── 📄 hospital.sql                 # SQL database dump
+│
+├── 📁 includes/                        # Reusable UI components
 │   ├── 📄 footer.php
+│   ├── 📄 header.php
 │   └── 📄 navbar.php
 │
-├── 📁 database/                        # Database
-│   └── 📄 hospital.sql                 # SQL dump
+├── 📁 models/                          # Model layer (MVC)
+│   ├── 📄 adminModelZ.php
+│   ├── 📄 doctorModelM.php
+│   └── 📄 patientModelS.php
 │
-├── 📄 index.php                        # Entry point
-└── 📄 README.md                        # Documentation
+├── 📁 views/                           # View layer (MVC)
+│   ├── 📁 admin/                       # Admin pages
+│   ├── 📁 doctor/                      # Doctor pages
+│   ├── 📁 patient/                     # Patient pages
+│   ├── 📁 shared/                      # Shared pages (login/register)
+│   ├── 📄 home.php                     # Landing / Home page
+│   └── 📄 patientDashboardS.php        # Patient Dashboard
+│
+├── 📄 index.php                        # Main entry point
+└── 📄 README.md                        # Project documentation
