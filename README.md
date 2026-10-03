@@ -137,7 +137,11 @@ Assets	assets/	Contains CSS and JavaScript resources
 * **Version Control**: Git / GitHub
 
 ---
-🔄 Application Flow
+## 🔄 Application Flow
+
+### Standard Request Flow
+
+```text
 User
  │
  ▼
@@ -149,13 +153,17 @@ Controller
  ├──────────────► Model
  │                   │
  │                   ▼
- │               MySQL Database
+ │              MySQL Database
  │
  ▼
 View / Response
+```
 
-For asynchronous operations:
+### ⚡ Asynchronous Request Flow
 
+For operations that use AJAX without reloading the entire page:
+
+```text
 User Action
      │
      ▼
@@ -175,8 +183,13 @@ JSON Response
      │
      ▼
 Updated UI
+```
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+
+```text
 HospitalAppointmentSystem/
 │
 ├── 📁 ajax/                         # AJAX endpoints
@@ -223,3 +236,4 @@ HospitalAppointmentSystem/
 ├── 📄 patientDashboardS.php         # Patient dashboard
 ├── 📄 index.php                     # Main application entry point
 └── 📄 README.md                     # Project documentation
+```
