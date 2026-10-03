@@ -2,6 +2,9 @@
 
 A complete web-based hospital appointment management system built with PHP, MySQL, HTML, CSS, JavaScript, and AJAX, following the MVC architectural pattern.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-0070f3?style=for-the-badge&logo=globe)](https://hospitalmanagementsadman.infy.click/views/shared/login.php?logout=success&i=1)
+
+🔗 **Live Project Link:** [https://hospitalmanagementsadman.infy.click](https://hospitalmanagementsadman.infy.click/views/shared/login.php?logout=success&i=1)
 ---
 
 ## 📌 Table of Contents
