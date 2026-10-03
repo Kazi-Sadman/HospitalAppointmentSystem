@@ -50,15 +50,18 @@ This is a full-stack web application developed as a university group assignment.
 ---
 
 ## 🏗️ Architecture
-The system strictly follows the **MVC (Model-View-Controller)** pattern:
 
-| Component | Description | Folder |
-| :--- | :--- | :--- |
-| **Model** | Handles all database queries and business logic | `models/` |
-| **View** | Displays the user interface (HTML, CSS, JavaScript) | `views/` |
-| **Controller** | Processes user input, validates data, calls models | `controllers/` |
+The project follows the MVC (Model–View–Controller) architecture:
 
----
+Layer	Directory	Responsibility
+Model	models/	Handles database operations and application data
+View	views/	Handles user interface and page presentation
+Controller	controllers/	Processes requests and controls application flow
+AJAX	ajax/	Handles asynchronous requests without full-page reloads
+Config	config/	Contains database and application configuration
+Database	database/	Contains SQL scripts and database structure
+Includes	includes/	Contains reusable UI components
+Assets	assets/	Contains CSS and JavaScript resources
 
 ## 👥 User Roles
 
@@ -134,50 +137,89 @@ The system strictly follows the **MVC (Model-View-Controller)** pattern:
 * **Version Control**: Git / GitHub
 
 ---
+🔄 Application Flow
+User
+ │
+ ▼
+index.php / View
+ │
+ ▼
+Controller
+ │
+ ├──────────────► Model
+ │                   │
+ │                   ▼
+ │               MySQL Database
+ │
+ ▼
+View / Response
 
-## 📂 Folder Structure
+For asynchronous operations:
 
+User Action
+     │
+     ▼
+JavaScript
+     │
+     ▼
+AJAX Endpoint
+     │
+     ▼
+Controller / Model
+     │
+     ▼
+MySQL Database
+     │
+     ▼
+JSON Response
+     │
+     ▼
+Updated UI
+
+📂 Project Structure
 HospitalAppointmentSystem/
 │
-├── 📁 ajax/                            # AJAX endpoints
-│   ├── 📄 adminAjaxZ.php               # Admin AJAX (Mayeesha)
-│   ├── 📄 doctorAjaxM.php              # Doctor AJAX (Zoita)
-│   └── 📄 patientAjaxS.php             # Patient AJAX (Sadman)
+├── 📁 ajax/                         # AJAX endpoints
+│   ├── 📄 adminAjaxZ.php            # Admin AJAX operations
+│   ├── 📄 doctorAjaxM.php           # Doctor AJAX operations
+│   └── 📄 patientAjaxS.php          # Patient AJAX operations
 │
-├── 📁 assets/                          # Static assets
-│   ├── 📁 css/                         # Custom stylesheets
-│   └── 📁 js/                          # Custom JavaScript files
+├── 📁 assets/                       # Static frontend assets
+│   ├── 📁 css/                      # Custom CSS stylesheets
+│   └── 📁 js/                       # Custom JavaScript files
 │
-├── 📁 config/                          # Configuration files
-│   └── 📄 database.php                 # MySQL connection setup
+├── 📁 config/                       # Application configuration
+│   └── 📄 database.php              # MySQL database connection
 │
-├── 📁 controllers/                     # Controller layer (MVC)
-│   ├── 📄 adminControllerZ.php
-│   ├── 📄 authController.php
-│   ├── 📄 doctorControllerM.php
-│   ├── 📄 logoutController.php
-│   └── 📄 patientControllerS.php
+├── 📁 controllers/                  # MVC Controller layer
+│   ├── 📄 adminControllerZ.php      # Admin request handling
+│   ├── 📄 authController.php        # Authentication handling
+│   ├── 📄 doctorControllerM.php     # Doctor request handling
+│   ├── 📄 logoutController.php      # Logout handling
+│   └── 📄 patientControllerS.php    # Patient request handling
 │
-├── 📁 database/                        # Database scripts
-│   └── 📄 hospital.sql                 # SQL database dump
+├── 📁 database/                     # Database scripts
+│   └── 📄 hospital.sql              # Database schema and sample data
 │
-├── 📁 includes/                        # Reusable UI components
-│   ├── 📄 footer.php
-│   ├── 📄 header.php
-│   └── 📄 navbar.php
+├── 📁 includes/                     # Reusable UI components
+│   ├── 📄 footer.php                # Common footer
+│   ├── 📄 header.php                # Common header
+│   └── 📄 navbar.php                # Navigation bar
 │
-├── 📁 models/                          # Model layer (MVC)
-│   ├── 📄 adminModelZ.php
-│   ├── 📄 doctorModelM.php
-│   └── 📄 patientModelS.php
+├── 📁 models/                       # MVC Model layer
+│   ├── 📄 adminModelZ.php           # Admin database operations
+│   ├── 📄 doctorModelM.php          # Doctor database operations
+│   └── 📄 patientModelS.php         # Patient database operations
 │
-├── 📁 views/                           # View layer (MVC)
-│   ├── 📁 admin/                       # Admin pages
-│   ├── 📁 doctor/                      # Doctor pages
-│   ├── 📁 patient/                     # Patient pages
-│   ├── 📁 shared/                      # Shared pages (login/register)
-│   ├── 📄 home.php                     # Landing / Home page
-│   └── 📄 patientDashboardS.php        # Patient Dashboard
+├── 📁 views/                        # MVC View layer
+│   ├── 📁 admin/                    # Admin interface/pages
+│   ├── 📁 doctor/                   # Doctor interface/pages
+│   ├── 📁 patient/                  # Patient interface/pages
+│   └── 📁 shared/                   # Shared pages
+│       ├── 📄 login.php             # Login page
+│       └── 📄 register.php          # Registration page
 │
-├── 📄 index.php                        # Main entry point
-└── 📄 README.md                        # Project documentation
+├── 📄 home.php                      # Landing / Home page
+├── 📄 patientDashboardS.php         # Patient dashboard
+├── 📄 index.php                     # Main application entry point
+└── 📄 README.md                     # Project documentation
